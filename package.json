@@ -1,0 +1,39 @@
+{
+  "name": "wagtail-up",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "scripts": "gulp scripts",
+    "start": "gulp",
+    "styles": "gulp styles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickmoreton/wagtail-up.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickmoreton/wagtail-up/issues"
+  },
+  "homepage": "https://github.com/nickmoreton/wagtail-up#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "autoprefixer": "^10.4.2",
+    "browser-sync": "^2.27.7",
+    "codyhouse-framework": "^3.0.4",
+    "cssnano": "^5.0.17",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.49.9"
+  }
+}
