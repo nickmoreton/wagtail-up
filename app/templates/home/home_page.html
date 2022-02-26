@@ -1,14 +1,20 @@
 {% extends "base.html" %}
-{% load static %}
+{% load wagtailcore_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
 
 <div class="container max-width-md">
-    <div class="padding-y-sm">
-        <h1>Welcome!</h1>
-    </div>
+    {% for block in page.body %}
+        {% if block.block_type == 'text' %}
+            <div class='rich-text text-component'>
+                {% include_block block %}
+            </div>
+        {% else %}
+        {% include_block block %}
+        {% endif %}
+    {% endfor %}
 </div>
 
 {% endblock content %}
