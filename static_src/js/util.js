@@ -1,7 +1,7 @@
 // Utility function
 function Util () {};
 
-/* 
+/*
 	class manipulation functions
 */
 Util.hasClass = function(el, className) {
@@ -16,7 +16,7 @@ Util.addClass = function(el, className) {
 
 Util.removeClass = function(el, className) {
 	var classList = className.split(' ');
-	el.classList.remove(classList[0]);	
+	el.classList.remove(classList[0]);
 	if (classList.length > 1) Util.removeClass(el, classList.slice(1).join(' '));
 };
 
@@ -31,7 +31,7 @@ Util.setAttributes = function(el, attrs) {
   }
 };
 
-/* 
+/*
   DOM manipulation
 */
 Util.getChildrenByClassName = function(el, className) {
@@ -61,15 +61,15 @@ Util.is = function(elem, selector) {
   return false;
 };
 
-/* 
+/*
 	Animate height of an element
 */
 Util.setHeight = function(start, to, element, duration, cb, timeFunction) {
 	var change = to - start,
 	    currentTime = null;
 
-  var animateHeight = function(timestamp){  
-    if (!currentTime) currentTime = timestamp;         
+  var animateHeight = function(timestamp){
+    if (!currentTime) currentTime = timestamp;
     var progress = timestamp - currentTime;
     if(progress > duration) progress = duration;
     var val = parseInt((progress/duration)*change + start);
@@ -83,13 +83,13 @@ Util.setHeight = function(start, to, element, duration, cb, timeFunction) {
     	if(cb) cb();
     }
   };
-  
+
   //set the height of the element before starting animation -> fix bug on Safari
   element.style.height = start+"px";
   window.requestAnimationFrame(animateHeight);
 };
 
-/* 
+/*
 	Smooth Scroll
 */
 
@@ -99,9 +99,9 @@ Util.scrollTo = function(final, duration, cb, scrollEl) {
     currentTime = null;
 
   if(!scrollEl) start = window.scrollY || document.documentElement.scrollTop;
-      
+
   var animateScroll = function(timestamp){
-  	if (!currentTime) currentTime = timestamp;        
+  	if (!currentTime) currentTime = timestamp;
     var progress = timestamp - currentTime;
     if(progress > duration) progress = duration;
     var val = Math.easeInOutQuad(progress, start, final-start, duration);
@@ -116,7 +116,7 @@ Util.scrollTo = function(final, duration, cb, scrollEl) {
   window.requestAnimationFrame(animateScroll);
 };
 
-/* 
+/*
   Focus utility classes
 */
 
@@ -130,7 +130,7 @@ Util.moveFocus = function (element) {
   }
 };
 
-/* 
+/*
   Misc
 */
 
@@ -191,9 +191,9 @@ Util.osHasReducedMotion = function() {
   var matchMediaObj = window.matchMedia('(prefers-reduced-motion: reduce)');
   if(matchMediaObj) return matchMediaObj.matches;
   return false; // return false if not supported
-}; 
+};
 
-/* 
+/*
 	Polyfills
 */
 //Closest() method
@@ -208,7 +208,7 @@ if (!Element.prototype.closest) {
 		do {
 			if (el.matches(s)) return el;
 			el = el.parentElement || el.parentNode;
-		} while (el !== null && el.nodeType === 1); 
+		} while (el !== null && el.nodeType === 1);
 		return null;
 	};
 }
@@ -228,7 +228,7 @@ if ( typeof window.CustomEvent !== "function" ) {
   window.CustomEvent = CustomEvent;
 }
 
-/* 
+/*
 	Animation curves
 */
 Math.easeInOutQuad = function (t, b, c, d) {
@@ -243,7 +243,7 @@ Math.easeInQuart = function (t, b, c, d) {
 	return c*t*t*t*t + b;
 };
 
-Math.easeOutQuart = function (t, b, c, d) { 
+Math.easeOutQuart = function (t, b, c, d) {
   t /= d;
 	t--;
 	return -c * (t*t*t*t - 1) + b;
@@ -267,7 +267,7 @@ Math.easeOutElastic = function (t, b, c, d) {
 
 /* JS Utility Classes */
 
-// make focus ring visible only for keyboard navigation (i.e., tab key) 
+// make focus ring visible only for keyboard navigation (i.e., tab key)
 (function() {
   var focusTab = document.getElementsByClassName('js-tab-focus'),
     shouldInit = false,
