@@ -13,6 +13,10 @@ Frontend
 - [Codyhouse Framework](https://codyhouse.co)
 - Gulp and NPM
 
+Github
+
+- Basic github actions
+
 ## Installation
 
 Clone this repository to your local machine.
@@ -30,6 +34,9 @@ Pipenv:
 ```bash
 pipenv install
 pipenv shell
+
+python manage.py migrate
+python manage.py createsuperuser
 python manage.py runserver 0:8000
 ```
 
@@ -39,6 +46,9 @@ Virtualenv:
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+
+python manage.py migrate
+python manage.py createsuperuser
 python manage.py runserver 0:8000
 ```
 
@@ -46,6 +56,11 @@ Docker:
 
 ```bash
 docker-compose up
+
+# in a new terminal
+docker-compose exec app bash
+python manage.py migrate
+python manage.py createsuperuser
 ```
 
 The site will be avaiable at `http://localhost:8000`
@@ -73,3 +88,10 @@ To install the tools:
 ```bash
 pre-commit install
 ```
+
+Pre-commit will run when you commit changes.
+
+## TODO
+
+- Basic wagtail apps
+- Inital wagtail/django tests
