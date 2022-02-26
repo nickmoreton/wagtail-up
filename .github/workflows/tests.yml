@@ -1,0 +1,41 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.8']
+        django: ['4.0']
+        wagtail: ['2.16']
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements-dev.txt
+      - name: Flake8
+        run: |
+          flake8 app
+      - name: Isort
+        run: |
+          isort app --check
+      - name: Black
+        run: |
+          black app --check
+      - name: Run Tests
+        run: |
+          python manage.py test
