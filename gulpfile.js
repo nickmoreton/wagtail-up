@@ -30,7 +30,7 @@ function jsTask() {
 
 // COMMON ////////////////////////////////////////////////////////////////////////
 function cleanTask() {
-    return del(["./app/static_compiled"]); // delete static_compiled folder
+    return del(["./app/static_compiled/css","./app/static_compiled/js"]); // delete static_compiled folder
 }
 
 // WATCHES ///////////////////////////////////////////////////////////////////////
