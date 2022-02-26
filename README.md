@@ -1,6 +1,6 @@
 # Wagtail UP
 
-A quick start develoment Wagtail project template with a frontend framework.
+A quick start template for the develoment of a Wagtail project, with a frontend framework.
 
 Backend
 
@@ -54,6 +54,14 @@ python manage.py runserver 0:8000
 
 Docker:
 
+Fabric (https://www.fabfile.org/) is available to run docker commands. View available commands with:
+
+```bash
+fab -l
+```
+
+Or run the docker containers with:
+
 ```bash
 docker-compose up
 
@@ -94,4 +102,3 @@ Pre-commit will run when you commit changes.
 ## TODO
 
 - Basic wagtail apps
-- Inital wagtail/django tests
