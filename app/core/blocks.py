@@ -5,6 +5,7 @@ from wagtail.core.blocks import (
     StreamBlock,
     StructBlock,
 )
+from wagtail.images.blocks import ImageChooserBlock
 
 
 class HeadingBlock(StructBlock):
@@ -40,6 +41,30 @@ class HeadingBlock(StructBlock):
         return context
 
 
+class ImageBlock(StructBlock):
+    image = ImageChooserBlock(required=True)
+    caption = CharBlock(required=False)
+
+    class Meta:
+        icon = "image"
+        template = "blocks/image_block.html"
+
+
+class GalleryBlock(StructBlock):
+    title = CharBlock(required=False)
+    images = StreamBlock(
+        [
+            ("image", ImageBlock()),
+        ],
+    )
+
+    class Meta:
+        icon = "image"
+        template = "blocks/gallery_block.html"
+
+
 class CoreBlocks(StreamBlock):
     heading = HeadingBlock()
     text = RichTextBlock(icon="doc-full", features=["bold", "italic", "link"])
+    image = ImageBlock()
+    gallery = GalleryBlock()

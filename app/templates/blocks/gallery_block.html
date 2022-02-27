@@ -1,0 +1,12 @@
+{% load wagtailcore_tags %}
+
+<div class="gallery">
+    <div class="text-lg font-secondary">{{ value.title }}</div>
+    <div class="gallery-images grid grid-col-3@sm gap-x-sm">
+        {% for image in value.images %}
+        <div class="gallery-image col-1@sm">
+            {% include_block image %}
+        </div>
+        {% endfor %}
+    </div>
+</div>

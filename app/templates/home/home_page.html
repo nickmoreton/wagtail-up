@@ -7,14 +7,14 @@
 
 <main class="container max-width-md padding-lg bg-white radius-lg">
     {% for block in page.body %}
-    <div class="text-xs color-accent float-right opacity-40%">&leftarrow;{{ block.block_type }} block</div>
-    {% if block.block_type == 'text' %}
-    <div class='rich-text text-component'>
-        {% include_block block %}
-    </div>
-    {% else %}
-    {% include_block block %}
-    {% endif %}
+        <div class="text-xs color-accent opacity-40% margin-bottom-xxxxs">&downarrow;{{ block.block_type }} block</div>
+        {% if block.block_type == 'text' %}
+            <div class='rich-text text-component margin-bottom-md'>
+                {% include_block block %}
+            </div>
+        {% else %}
+            {% include_block block %}
+        {% endif %}
     {% endfor %}
 </main>
 

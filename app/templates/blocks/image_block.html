@@ -1,0 +1,8 @@
+{% load wagtailimages_tags %}
+<figure class="margin-bottom-md">
+    {% image value.image fill-1024x800 as image %}
+    <img src="{{ image.url }}" alt="{{ image.caption }}" class="block">
+    {% if value.caption %}
+    <figcaption class="bg-contrast-lower text-sm padding-xxxxs color-contrast-low margin-x-xxxxs">{{ value.caption }}</figcaption>
+    {% endif %}
+</figure>
