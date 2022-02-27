@@ -133,3 +133,5 @@ dmypy.json
 node_modules/
 /app/static_compiled/**/*/*
 !app/static_compiled/.gitkeep
+/static
+/media
