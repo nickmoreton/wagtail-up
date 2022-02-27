@@ -5,16 +5,17 @@
 
 {% block content %}
 
-<div class="container max-width-md">
+<main class="container max-width-md padding-lg bg-white radius-lg">
     {% for block in page.body %}
-        {% if block.block_type == 'text' %}
-            <div class='rich-text text-component'>
-                {% include_block block %}
-            </div>
-        {% else %}
+    <div class="text-xs color-accent float-right opacity-40%">&leftarrow;{{ block.block_type }} block</div>
+    {% if block.block_type == 'text' %}
+    <div class='rich-text text-component'>
         {% include_block block %}
-        {% endif %}
+    </div>
+    {% else %}
+    {% include_block block %}
+    {% endif %}
     {% endfor %}
-</div>
+</main>
 
 {% endblock content %}
