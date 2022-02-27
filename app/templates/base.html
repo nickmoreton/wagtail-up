@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static wagtailcore_tags wagtailuserbar navigation_tags %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -31,17 +31,22 @@
 
     <body class="{% block body_class %}{% endblock %} bg-contrast-lower">
         {% wagtailuserbar %}
-        <header class="container max-width-md margin-y-md">
-            <a href="/">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" class="c-accent">
-                <title>start</title>
-                <g>
-                    <path
-                        d="M24,1A23,23,0,1,0,47,24,23.026,23.026,0,0,0,24,1Zm-1,9a1,1,0,0,1,2,0V22a1,1,0,0,1-2,0Zm1,27a13,13,0,0,1-8.667-22.689,1,1,0,1,1,1.334,1.49,11,11,0,1,0,14.606-.054,1,1,0,1,1,1.322-1.5A13,13,0,0,1,24,37Z"
-                        ></path>
-                </g>
-            </svg>
-            </a>
+        <header class="container max-width-md margin-y-md flex@sm items-center@sm">
+            <div class="logo col margin-bottom-sm margin-bottom-0@sm">
+                <a href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" class="c-accent">
+                    <title>start</title>
+                    <g>
+                        <path
+                            d="M24,1A23,23,0,1,0,47,24,23.026,23.026,0,0,0,24,1Zm-1,9a1,1,0,0,1,2,0V22a1,1,0,0,1-2,0Zm1,27a13,13,0,0,1-8.667-22.689,1,1,0,1,1,1.334,1.49,11,11,0,1,0,14.606-.054,1,1,0,1,1,1.322-1.5A13,13,0,0,1,24,37Z"
+                            ></path>
+                    </g>
+                </svg>
+                </a>
+            </div>
+            <nav class="bg-white radius-lg padding-xs padding-sm@sm">
+                {% navbar page %}
+            </nav>
         </header>
         {% block content %}{% endblock %}
 

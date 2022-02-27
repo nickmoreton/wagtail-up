@@ -1,0 +1,9 @@
+{% load wagtailcore_tags %}
+
+<ul class="flex gap-sm">
+    {% for item in navigation %}
+    <li class="{{ item.is_current }}">
+        <a href="{{ item.url }}" class="{{ item.link_class }} color-contrast-low">{{ item.title }}</a>
+    </li>
+    {% endfor %}
+</ul>

@@ -7,7 +7,7 @@
 
 <main class="container max-width-md padding-lg bg-white radius-lg">
     {% for block in page.body %}
-        <div class="text-xs color-accent opacity-40% margin-bottom-xxxxs">&downarrow;{{ block.block_type }} block</div>
+        {% include "core/block_marker.html" with block_type=block.block_type %}
         {% if block.block_type == 'text' %}
             <div class='rich-text text-component margin-bottom-md'>
                 {% include_block block %}
