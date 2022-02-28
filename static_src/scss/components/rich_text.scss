@@ -1,0 +1,40 @@
+.rich-text {
+    img {
+        display: block;
+        height: auto;
+        margin: var(--space-sm) auto;
+    }
+    img.left {
+        float: left;
+        margin: 0 var(--space-md) 0 0;
+    }
+    img.right {
+        float: right;
+        margin: 0 0 0 var(--space-md);
+    }
+    img.full-width {
+        margin: 0 auto;
+        width: 100%;
+    }
+    a {
+        &:hover {
+            color: var(--color-contrast-high);
+        }
+    }
+    ul {
+        list-style: disc;
+        margin: 0 0 var(--space-md);
+        padding: 0 0 0 var(--space-md);
+    }
+    ol {
+        list-style: decimal;
+        margin: 0 0 var(--space-md);
+        padding: 0 0 0 var(--space-md);
+    }
+    hr {
+        background-color: var(--color-contrast-lower);
+        height: var(--space-xxxxs);
+        border-radius: var(--radius-lg);
+        box-shadow: 0 0 10px var(--color-contrast-lower);
+    }
+}
