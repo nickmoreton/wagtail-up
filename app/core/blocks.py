@@ -65,6 +65,6 @@ class GalleryBlock(StructBlock):
 
 class CoreBlocks(StreamBlock):
     heading = HeadingBlock()
-    text = RichTextBlock(icon="doc-full", features=["bold", "italic", "link"])
+    text = RichTextBlock(icon="doc-full")
     image = ImageBlock()
     gallery = GalleryBlock()
