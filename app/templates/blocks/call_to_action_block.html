@@ -1,4 +1,13 @@
-{{ button_title }}
-{{ button_url }}
-{{ value.image }}
-{{ value.title }}
+{% load wagtailimages_tags %}
+<div class="cta-block flex@sm">
+    <div class="cta-block__image">
+        {% image value.image fill-1024x800 %}
+    </div>
+    <div class="cta-block__content">
+        <h2 class="cta-block__title">{{ value.title }}</h2>
+        <p class="cta-block__text">{{ value.text }}</p>
+    </div>
+    <div class="cta-block__button">
+        <a href="{{ button_url }}" class="cta-block__button--link">{{ button_title }}</a>
+    </div>
+</div>

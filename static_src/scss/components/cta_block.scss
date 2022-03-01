@@ -1,0 +1,49 @@
+@use '../base' as *;
+
+.cta-block {
+    border: var(--space-xxxs) solid var(--color-contrast-high);
+    border-radius: var(--space-xs);
+    margin-bottom: var(--space-md);
+    text-align: center;
+    img {
+        height: auto;
+        display: block;
+    }
+
+    @include breakpoint(sm) {
+        display: grid;
+        grid-template-columns: 2fr 1.5fr 1fr;
+    }
+
+    &__content {
+        padding: var(--space-sm);
+        @include breakpoint(sm) {
+            font-size: var(--text-sm);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: left;
+        }
+    }
+    &__button {
+        background-color: var(--color-primary);
+        &:hover {
+            background-color: var(--color-primary-light);
+        }
+
+        &--link {
+            color: var(--color-white);
+            text-decoration: none;
+            display: block;
+            padding: var(--space-sm) 0;
+            @include breakpoint(sm) {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                padding: var(--space-md);
+                text-align: center;
+            }
+        }
+    }
+
+}
