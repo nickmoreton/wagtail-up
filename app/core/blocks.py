@@ -69,6 +69,7 @@ class GalleryBlock(StructBlock):
 
 class CallToActionBlock(StructBlock):
     title = CharBlock(required=False)
+    text = RichTextBlock(required=False)
     image = ImageChooserBlock(required=False)
     button_text = CharBlock(required=False)
     button_link = URLBlock(required=False)
@@ -80,7 +81,7 @@ class CallToActionBlock(StructBlock):
 
     def get_context(self, value, parent_context=None):
         context = super().get_context(value, parent_context=parent_context)
-        context["button_url"] = value["button_link"] or value["page_link"]
+        context["button_url"] = value["button_link"] or value["page_link"].url
         context["button_title"] = value["button_text"] or value["page_link"].title
         return context
 
