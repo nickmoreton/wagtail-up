@@ -27,77 +27,15 @@ git clone https://github.com/nickmoreton/wagtail-up
 
 In github you can use the repo as a template for your project.
 
-### Python environment
+## Development
 
-Pipenv:
+There are three ways to setup development for python.
 
-```bash
-pipenv install
-pipenv shell
+- Docker
+- Pipenv
+- venv
 
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver 0:8000
-```
-
-Virtualenv:
-
-```bash
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver 0:8000
-```
-
-Docker:
-
-Fabric (https://www.fabfile.org/) is available to run docker commands. View available commands with:
-
-```bash
-fab -l
-```
-
-Or run the docker containers with:
-
-```bash
-docker-compose up
-
-# in a new terminal
-docker-compose exec app bash
-python manage.py migrate
-python manage.py createsuperuser
-```
-
-The site will be avaiable at `http://localhost:8000`
-
-### Node environment
-
-NPM:
-
-```bash
-npm install
-npm start
-```
-
-The site will be available at `http://localhost:3000`
-
-### Developer tools
-
-- Black
-- Flake8
-- Isort
-- Pre-commit
-
-To install the tools:
-
-```bash
-pre-commit install
-```
-
-Pre-commit will run when you commit changes.
+[Development Setup](docs/development.md)
 
 ## TODO
 
